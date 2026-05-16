@@ -216,3 +216,18 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- MLOps Project Specific ---
+data/
+
+
+models/*.h5
+models/*.pt
+models/*.pth
+models/*.onnx
+
+
+venv/
+.env
+
+.ipynb_checkpoints/

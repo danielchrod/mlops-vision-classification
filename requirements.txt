@@ -1,0 +1,30 @@
+# Web API
+fastapi
+uvicorn[standard]
+python-multipart
+
+# MLOps & Experiment Tracking
+wandb
+
+# Machine Learning & Deep Learning
+torch --index-url https://download.pytorch.org/whl/cpu
+segmentation_models_pytorch
+
+# Procesamiento de Datos e Imágenes
+numpy
+pandas
+pillow
+opencv-python-headless
+albumentations
+
+# Visualización
+matplotlib
+seaborn
+
+# Utilidades y Descargas
+requests
+tqdm
+datasets
+
+pytest
+pyyaml
