@@ -19,6 +19,7 @@ def train_model():
     train_transforms = get_transforms(img_size=256, is_train=True)
     
     train_dataset = FoodDataset(data_dir="data/train", transform=train_transforms)
+    print(f"Se han detectado {len(train_dataset)} imágenes para el entrenamiento")
     train_loader = DataLoader(train_dataset, batch_size=wandb.config.batch_size, shuffle=True)
 
     device = "cuda" if torch.cuda.is_available() else "cpu"

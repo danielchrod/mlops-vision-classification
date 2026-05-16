@@ -52,8 +52,11 @@ def load_checkpoint(model, path, device):
 class FoodDataset(Dataset):
     """Dataset personalizado para leer las imágenes y máscaras reales de las carpetas."""
     def __init__(self, data_dir, transform=None):
-        self.img_paths = sorted(glob.glob(os.path.join(data_dir, "image", "*")))
-        self.mask_paths = sorted(glob.glob(os.path.join(data_dir, "masks", "*")))
+        all_imgs = sorted(glob.glob(os.path.join(data_dir, "images", "*")))
+        all_masks = sorted(glob.glob(os.path.join(data_dir, "masks", "*")))
+        
+        self.img_paths = [p for p in all_imgs if os.path.isfile(p) and not p.endswith('.gitkeep')]
+        self.mask_paths = [p for p in all_masks if os.path.isfile(p) and not p.endswith('.gitkeep')]
         self.transform = transform
 
     def __len__(self):
