@@ -18,8 +18,8 @@ Siguiendo las mejores prácticas de ingeniería de software:
 ├── models/             # Pesos del modelo entrenado (mejor_modelo_B.pth)
 ├── src/                # Código fuente modular
 │   ├── inference_api.py # Endpoint FastAPI para predicciones
-│   ├── train.py        # Script de entrenamiento modular
-│   └── data_loader.py  # Gestión de datasets y transformaciones
+│   ├── train.py        # Script de entrenamiento real conectado a wandb
+│   └── utils.py        # Gestión del FoodDataset, transformaciones y carga de checkpoints
 ├── tests/              # Pruebas unitarias y de integración
 ├── Dockerfile          # Receta para la imagen de producción
 ├── requirements.txt    # Dependencias fijas del proyecto
