@@ -231,3 +231,14 @@ venv/
 .env
 
 .ipynb_checkpoints/
+
+
+data/
+models/*.h5
+models/*.pt
+models/*.pkl
+
+.ipynb_checkpoints/
+
+__pycache__/
+*.py[cod]

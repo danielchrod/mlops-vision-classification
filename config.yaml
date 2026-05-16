@@ -1,0 +1,8 @@
+# Configuración del Experimento (MLOps)
+project_name: "food-segmentation-mlops"
+
+hyperparameters:
+  learning_rate: 0.0001
+  epochs: 5
+  batch_size: 8
+  architecture: "DeepLabV3Plus"

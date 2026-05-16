@@ -1,0 +1,56 @@
+_wandb:
+    value:
+        cli_version: 0.27.0
+        e:
+            yna7oanpm8ana5b0bz6386calnubweis:
+                codePath: src/train.py
+                codePathLocal: src/train.py
+                cpu_count: 1
+                cpu_count_logical: 2
+                disk:
+                    /:
+                        total: "33636024320"
+                        used: "17278210048"
+                email: danielchacon.rdz@gmail.com
+                executable: /home/codespace/.python/current/bin/python3
+                git:
+                    commit: e25c6313f2f4230ad9028d5be883408455637adc
+                    remote: https://github.com/danielchrod/mlops-vision-classification
+                host: codespaces-754b0b
+                memory:
+                    total: "8329437184"
+                os: Linux-6.8.0-1044-azure-x86_64-with-glibc2.39
+                program: /workspaces/mlops-vision-classification/src/train.py
+                python: CPython 3.12.1
+                root: /workspaces/mlops-vision-classification
+                startedAt: "2026-05-16T18:41:58.762036Z"
+                writerId: yna7oanpm8ana5b0bz6386calnubweis
+        m: []
+        python_version: 3.12.1
+        t:
+            "1":
+                - 1
+                - 41
+                - 49
+                - 63
+                - 74
+            "2":
+                - 1
+                - 41
+                - 49
+                - 63
+                - 74
+            "3":
+                - 16
+            "4": 3.12.1
+            "5": 0.27.0
+            "12": 0.27.0
+            "13": linux-x86_64
+architecture:
+    value: DeepLabV3Plus
+batch_size:
+    value: 2
+epochs:
+    value: 1
+learning_rate:
+    value: 0.0001
