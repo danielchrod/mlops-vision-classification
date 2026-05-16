@@ -1,9 +1,10 @@
 import yaml
 import torch
 import segmentation_models_pytorch as smp
-from torch.utils.data import DataLoader, TensorDataset
+from torch.utils.data import DataLoader
 from tqdm import tqdm
 import wandb
+from .utils import FoodDataset, get_transforms 
 
 def train_model():
 
@@ -15,14 +16,10 @@ def train_model():
         config=config_data["hyperparameters"]
     )
 
-
-    # SIMULACIÓN DE DATOS 
-    # Creamos 4 imágenes de tamaño 3x256x256 y sus máscaras
-    dummy_imgs = torch.randn(4, 3, 256, 256)
-    dummy_masks = torch.randint(0, 104, (4, 256, 256)) 
+    train_transforms = get_transforms(img_size=256, is_train=True)
     
-    dataset = TensorDataset(dummy_imgs, dummy_masks)
-    train_loader = DataLoader(dataset, batch_size=wandb.config.batch_size)
+    train_dataset = FoodDataset(data_dir="data/train", transform=train_transforms)
+    train_loader = DataLoader(train_dataset, batch_size=wandb.config.batch_size, shuffle=True)
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     model = smp.DeepLabV3Plus(encoder_name="resnet50", classes=104).to(device)
@@ -46,7 +43,7 @@ def train_model():
 
         avg_loss = epoch_loss / len(train_loader)
         wandb.log({"train_loss": avg_loss, "epoch": epoch}) 
-        print(f"Epoch {epoch} finalizada. Loss: {avg_loss}")
+        print(f"Epoch {epoch+1} finalizada. Loss: {avg_loss}")
 
     torch.save(model.state_dict(), "models/mejor_modelo_B.pth")
     wandb.finish()
